@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified" xmlns:fcion="urn:xlmns:fcion"
+  targetNamespace="urn:xlmns:fcion">
+
+<xs:simpleType name="camiseta">
+    <xs:restriction base="xs:integer">
+      <xs:maxInclusive value="23"/>
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="jugador">
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="camiseta" type="fcion:camiseta" use="required" />
+    </xs:extension>
+ </xs:simpleContent>
+</xs:complexType>
+
+<xs:element name="formacion">
+  <xs:complexType>
+    <xs:all>
+      <xs:element name="arquero" type="fcion:jugador"  />
+      <xs:element name="defensor" type="fcion:jugador" />
+      <xs:element name="medio" type="fcion:jugador" />
+    </xs:all>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

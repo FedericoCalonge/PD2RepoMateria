@@ -1,0 +1,19 @@
+<!ENTITY afa "Asociacion del Futbol Argentino">
+
+<!ELEMENT formacion (arquero, defensor+, medio+, extremo*, delantero*)>
+  <!ATTLIST formacion estrategia (defensiva|ofensiva|estudiosa) #IMPLIED>
+
+<!ELEMENT arquero (#PCDATA)>
+  <!ATTLIST arquero camiseta CDATA #REQUIRED>
+
+<!ELEMENT defensor (#PCDATA)>
+  <!ATTLIST defensor camiseta CDATA #REQUIRED>
+
+<!ELEMENT medio (#PCDATA)>
+  <!ATTLIST medio camiseta CDATA #REQUIRED>
+
+<!ELEMENT extremo (#PCDATA)>
+  <!ATTLIST extremo camiseta CDATA #REQUIRED>
+
+<!ELEMENT delantero (#PCDATA)>
+  <!ATTLIST delantero camiseta CDATA #REQUIRED>

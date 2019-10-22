@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<fcion:formacion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:fcion="urn:xlmns:fcion"
+  xsi:schemaLocation="urn:xlmns:fcion formacion.xsd">
+  <arquero>Benitez</arquero>
+  <defensor>Uglessich</defensor>
+  <medio>Braña</medio>
+</fcion:formacion>

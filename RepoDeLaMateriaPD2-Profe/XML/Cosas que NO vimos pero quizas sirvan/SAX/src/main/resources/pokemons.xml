@@ -1,0 +1,27 @@
+<pokedex>
+
+	<pokemon>
+	   <nombre clase = 'fuego' >Blaziken</nombre>
+	   <pv>130</pv>
+	   <ataque1>Danza del Fuego</ataque1>
+	   <ataque2>Patada Llameante</ataque2>
+	   <etapa>Fase 2</etapa>
+	</pokemon>
+
+	<pokemon>
+		<nombre clase = 'neutro' >Audino</nombre>
+		<pv>80</pv>
+		<ataque1>Doblebofetón</ataque1>
+		<ataque2>CaraTriste</ataque2>
+		<etapa>Básico</etapa>
+	</pokemon>
+
+	<pokemon>
+		<nombre clase = 'psicologico' >Munna</nombre>
+		<pv>70</pv>
+		<ataque1>Hipnosis</ataque1>
+		<ataque2>Come Sueños</ataque2>
+		<etapa>Fase 2</etapa>
+	</pokemon>
+
+</pokedex>

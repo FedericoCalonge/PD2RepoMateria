@@ -1,0 +1,122 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="banco" type="banco_type">
+
+    <xsd:key name="cu_id">
+
+      <!-- selection of the elements for which the account id restriction must hold: -->
+      <xsd:selector xpath="cuentas/caja_ahorros/caja_ahorro | cuentas/cuentas_corrientes/cuenta_corriente"/>
+
+      <!-- also possible (but less specific) is: <xsd:selector xpath="cuentas/*/*"/>  -->
+
+      <!-- select the attribute -->
+      <xsd:field xpath="@id"/>
+    </xsd:key>
+
+    <xsd:key name="c_id">
+      <xsd:selector xpath="clientes/cliente"/>
+      <xsd:field xpath="@id"/>
+    </xsd:key>
+
+    <!-- specification of the two referential integrity constraints -->
+    <xsd:keyref name="c_ref" refer="c_id">
+       <xsd:selector xpath="clientes_cuentas/cliente_cuenta"/>
+       <xsd:field xpath="@c_id"/>
+    </xsd:keyref>
+
+    <xsd:keyref name="cu_ref" refer="cu_id">
+       <xsd:selector xpath="clientes_cuentas/cliente_cuenta"/>
+       <xsd:field xpath="@cu_id"/>
+    </xsd:keyref>
+
+  </xsd:element>
+
+  <xsd:complexType name="banco_type">
+    <xsd:sequence>
+      <xsd:element name="cuentas" type="cuentas_type"/>
+      <xsd:element name="clientes" type="clientes_type"/>
+      <xsd:element name="clientes_cuentas" type="cliente_cuentas_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="cuentas_type">
+    <xsd:sequence>
+      <xsd:element name="caja_ahorros" type="caja_ahorros_type"/>
+      <xsd:element name="cuentas_corrientes" type="cuentas_corrientes_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="clientes_type">
+    <xsd:sequence>
+      <xsd:element name="cliente" type="cliente_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="cliente_cuentas_type">
+    <xsd:sequence>
+      <xsd:element name="cliente_cuenta" type="cliente_cuenta_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="caja_ahorros_type">
+    <xsd:sequence>
+      <xsd:element name="caja_ahorro" type="caja_ahorro_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="cuentas_corrientes_type">
+    <xsd:sequence>
+      <xsd:element name="cuenta_corriente" type="cuenta_corriente_type" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- specification of the base account type -->
+  <xsd:complexType name="basic_account_type">
+    <xsd:sequence>
+      <xsd:element name="balance" type="balance_type"/>
+    </xsd:sequence>
+    <!-- ids are always "required" -->
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="balance_type">
+    <!-- balance can be decimal -->
+    <xsd:restriction base="xsd:decimal">
+      <!--  the balance is greater than -5000, therefore minExclusive -->
+      <xsd:minExclusive value="-5000"/>
+    </xsd:restriction>
+  </xsd:simpleType >
+
+  <xsd:complexType name="caja_ahorro_type">
+   <xsd:complexContent>
+     <!-- extend the base account -->
+     <xsd:extension base="basic_account_type">
+       <!-- interest can be decimal -->
+       <xsd:attribute name="interes" type="xsd:decimal" use="required"/>
+     </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="cuenta_corriente_type">
+   <xsd:complexContent>
+     <xsd:extension base="basic_account_type">
+     </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="cliente_type">
+    <xsd:sequence>
+      <xsd:element name="nombre" type="xsd:string"/>
+      <xsd:element name="direccion" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="cliente_cuenta_type">
+    <xsd:attribute name="c_id" type="xsd:string" use="required"/>
+    <xsd:attribute name="cu_id" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+</xsd:schema>

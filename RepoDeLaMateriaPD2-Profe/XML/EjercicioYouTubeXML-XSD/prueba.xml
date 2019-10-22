@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<padre xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="familia.xsd">
+    <nombre>Antonio</nombre>
+    <apellido>Pérez</apellido>
+    <apellido>Rodríguez</apellido>
+    <dni>12.345.678-A</dni>
+    <edad>18</edad>
+</padre>

@@ -1,0 +1,12 @@
+table tr td {
+  text-align: center;
+}
+
+table th {
+  background-color: #90c3d4;
+}
+
+.divisorRow {
+  border-bottom: 1px solid;
+  padding-top: 10px;
+}

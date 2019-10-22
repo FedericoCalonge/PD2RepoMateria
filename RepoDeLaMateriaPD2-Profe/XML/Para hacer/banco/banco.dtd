@@ -1,0 +1,26 @@
+<!ELEMENT banco (cuentas, clientes, clientes_cuentas)>
+
+<!ELEMENT cuentas (caja_ahorros, cuentas_corrientes)>
+<!ELEMENT caja_ahorros (caja_ahorro)*>
+
+<!ELEMENT cuentas_corrientes (cuenta_corriente)*>
+
+<!ELEMENT caja_ahorro (balance)>
+<!ATTLIST caja_ahorro id ID #REQUIRED interes CDATA #REQUIRED>
+
+<!ELEMENT cuenta_corriente (balance)>
+
+<!ELEMENT balance (#PCDATA)>
+
+<!ATTLIST cuenta_corriente id ID #REQUIRED>
+
+<!ELEMENT clientes (cliente)*>
+<!ELEMENT cliente (nombre, direccion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ATTLIST cliente id ID #REQUIRED>
+
+<!ELEMENT clientes_cuentas (cliente_cuenta)*>
+<!ELEMENT cliente_cuenta EMPTY>
+<!ATTLIST cliente_cuenta c_id IDREF #REQUIRED
+                           cu_id IDREF #REQUIRED>

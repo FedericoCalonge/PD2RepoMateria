@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<!DOCTYPE formacion SYSTEM "formacion_futbol.dtd">
+<formacion>
+  <arquero>Benitez</arquero>
+  <defensor>Uglessich</defensor>
+  <medio>Braña</medio>
+</formacion>

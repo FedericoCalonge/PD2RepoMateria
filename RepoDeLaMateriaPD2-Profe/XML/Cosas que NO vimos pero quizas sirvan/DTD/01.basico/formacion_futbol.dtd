@@ -1,0 +1,6 @@
+<!ELEMENT formacion (arquero, defensor+, medio+, extremo*, delantero*)>
+<!ELEMENT arquero (#PCDATA)>
+<!ELEMENT defensor (#PCDATA)>
+<!ELEMENT medio (#PCDATA)>
+<!ELEMENT extremo (#PCDATA)>
+<!ELEMENT delantero (#PCDATA)>

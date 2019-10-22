@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<!DOCTYPE formacion SYSTEM "formacion_futbol.dtd">
+<formacion estrategia="ofensiva">
+  <!-- Under DTD, a programmer may not designate a specific number of occurrences
+  (e.g. three times, between two and five times, etc.).-->
+  <arquero camiseta="1">Benitez</arquero>
+  <defensor camiseta="2">Uglessich</defensor>
+  <medio camiseta="18">Braña</medio>
+</formacion>

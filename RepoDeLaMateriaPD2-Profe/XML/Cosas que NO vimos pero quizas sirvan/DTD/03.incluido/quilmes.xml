@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE formacion [
+
+<!ENTITY afa "Asociacion del Futbol Argentino">
+
+<!ELEMENT formacion (arquero, defensor+, medio+, extremo*, delantero*)>
+  <!ATTLIST formacion estrategia (defensiva|ofensiva|estudiosa) #IMPLIED>
+
+<!ELEMENT arquero (#PCDATA)>
+  <!ATTLIST arquero camiseta CDATA #REQUIRED>
+
+<!ELEMENT defensor (#PCDATA)>
+  <!ATTLIST defensor camiseta CDATA #REQUIRED>
+
+<!ELEMENT medio (#PCDATA)>
+  <!ATTLIST medio camiseta CDATA #REQUIRED>
+
+<!ELEMENT extremo (#PCDATA)>
+  <!ATTLIST extremo camiseta CDATA #REQUIRED>
+
+<!ELEMENT delantero (#PCDATA)>
+  <!ATTLIST delantero camiseta CDATA #REQUIRED>
+
+]>
+<formacion estrategia="ofensiva">
+  <!-- Under DTD, a programmer may not designate a specific number of occurrences
+  (e.g. three times, between two and five times, etc.).-->
+  <arquero camiseta="1">Benitez</arquero>
+  <defensor camiseta="2">Uglessich</defensor>
+  <medio camiseta="18">Braña</medio>
+</formacion>

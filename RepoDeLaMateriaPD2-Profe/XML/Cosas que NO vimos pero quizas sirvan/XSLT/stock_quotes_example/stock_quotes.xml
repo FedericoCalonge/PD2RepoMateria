@@ -1,0 +1,25 @@
+<?xml-stylesheet type="text/xsl" href="stock_quotes.xsl"?>
+<StockQuotes xmlns="urn:stock-quotes">
+  <StockQuote>
+    <Symbol>US:MSFT</Symbol>
+    <Quote Time="2006-08-17T13:35:07+01:00">
+      <Current>24.7</Current>
+      <Change>0.32</Change>
+    </Quote>
+    <Quote Time="2006-08-17T12:34:07+01:00">
+      <Current>24.38</Current>
+      <Change>0.11</Change>
+    </Quote>
+  </StockQuote>
+  <StockQuote>
+    <Symbol>US:SUNW</Symbol>
+    <Quote Time="2006-08-17T13:27:46+01:00">
+      <Current>4.82</Current>
+      <Change>0.2</Change>
+    </Quote>
+    <Quote Time="2006-08-17T12:28:55+01:00">
+      <Current>4.62</Current>
+      <Change>-0.13</Change>
+    </Quote>
+  </StockQuote>
+</StockQuotes>
