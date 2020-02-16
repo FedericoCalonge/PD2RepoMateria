@@ -1,7 +1,0 @@
-version: '3'
-services:
-  web:
-    build: .
-    image: example:1.0
-    ports:
-      - "80:80"

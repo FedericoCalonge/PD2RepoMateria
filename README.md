@@ -1,2 +1,3 @@
 # PD2RepoMateria
->Repo de la materia Programación Distribuida 2 - Universidad Nacional de Avellaneda.
+>Repo de la materia Programación Distribuida 2 - Universidad Nacional de Avellaneda.  
+>Profesor: Juan Lagostena.  
