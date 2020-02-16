@@ -2,6 +2,8 @@
   <cuentas>
     <caja_ahorros>
       <caja_ahorro id="a1" interes="0.03">
+        <!--CUentas es HIJO de banco, cajas_ahorros y cuentas_corrientes es HIJO de caja_ahorros.
+        .caja_ahorro es HIJO de caja_ahorros-->
         <balance>2500</balance>
       </caja_ahorro>
       <caja_ahorro id="a2" interes="0.03">
